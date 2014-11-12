@@ -28,14 +28,14 @@ Scenario: Update a movie (happy path)
   And I fill in "Title" with "This is Not a Test Movie"
   And I press "Update Movie Info"
   Then I should be on the details page for "This is Not a Test Movie"
-
+@javascript
 Scenario: Delete a movie (happy path)
   Given I am on the details page for "Test Movie"
   When I press "Delete"
   #Need javascript support to finish testing this scenario!
   And I confirm the popup
-  When I should be on the RottenPotatoes home page
-  And I should not see "Test Movie"
+  Then I should be on the RottenPotatoes home page
+  And I should not see "test movie"
 
 Scenario: Create a movie with no title (sad path)
   When I follow "Add new movie"

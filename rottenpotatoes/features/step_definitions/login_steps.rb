@@ -6,6 +6,7 @@ Given(/^I am logged in as "([^"]*)"$/) do |name|
   log_in
 end
 
+
 private
 def log_in
   cookie_jar = Capybara.current_session.driver.browser.current_session.

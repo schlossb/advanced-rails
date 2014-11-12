@@ -6,18 +6,13 @@ Given(/^I am logged in as "([^"]*)"$/) do |name|
   log_in
 end
 
+Given /^I confirm the popup$/ do
+page.driver.browser.accept_js_confirms
+end
 private
 def log_in
   cookie_jar = Capybara.current_session.driver.browser.current_session.
                  instance_variable_get(:@rack_mock_session).cookie_jar
   cookie_jar[:stub_user_id] = @current_user.id
 end
-In app/controllers/application_controller.rb, add the following:
 
-  private
-  if Rails.env.test?
-    prepend_before_filter :stub_current_user
-    def stub_current_user
-      session[:user_id] ||= cookies[:stub_user_id] 
-    end
-  end

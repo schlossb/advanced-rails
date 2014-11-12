@@ -1,4 +1,4 @@
-#require 'simplecov'
+#require 'simplecov'  #commented out because rspec doesn't like
 #SimpleCov.start 'rails'  
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
