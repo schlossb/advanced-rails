@@ -12,7 +12,7 @@ class Movie < ActiveRecord::Base
   end
 
   def valid_rating
-   if (release_date != nil && release_date.to_date < Date.parse("01-01-1968") )
+   if (release_date.to_date < Date.parse("01-01-1968") )
       return true
    end
    if (rating == nil)

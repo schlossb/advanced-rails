@@ -41,6 +41,5 @@ Scenario: Create a movie with no title (sad path)
   When I follow "Add new movie"
   #And I do not fill in "Title"
   And I press "Save Changes"
-  Then I should see "Create New Movie"
-  And I should see "Errors prevented this movie from being created" 
+  Then I should see "Errors prevented this movie from being created" 
   And I should see "Title can't be blank"

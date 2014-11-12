@@ -1,10 +1,6 @@
--# in _movie_form.html.haml (the partial)
- 
-= label :movie, :title, 'Title'
-= text_field :movie, 'title'
- 
-= label :movie, :rating, 'Rating'
-= select :movie, :rating, Movie.all_ratings
- 
-= label :movie, :release_date, 'Released On'
-= date_select :movie, :release_date
+-# A single row of the All Movies table
+%tr
+  %td= movie.title
+  %td= movie.rating
+  %td= movie.release_date
+  %td= link_to "More about #{movie.title}", movie_path(movie)
